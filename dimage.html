@@ -1,0 +1,41 @@
+
+For OSS Maintainers: VEX Notice
+--------------------------------
+If you're an OSS maintainer and Trivy has detected vulnerabilities in your project that you believe are not actually exploitable, consider issuing a VEX (Vulnerability Exploitability eXchange) statement.
+VEX allows you to communicate the actual status of vulnerabilities in your project, improving security transparency and reducing false positives for your users.
+Learn more and start using VEX: https://aquasecurity.github.io/trivy/v0.56/docs/supply-chain/vex/repo#publishing-vex-documents
+
+To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
+
+
+hiphopsid/bankapp:v11 (alpine 3.20.3)
+=====================================
+Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+
+
+Java (jar)
+==========
+Total: 5 (UNKNOWN: 0, LOW: 0, MEDIUM: 2, HIGH: 1, CRITICAL: 2)
+
+┌────────────────────────────────────────────────────────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────────────────┬─────────────────────────────────────────────────────────────┐
+│                          Library                           │ Vulnerability  │ Severity │ Status │ Installed Version │                Fixed Version                 │                            Title                            │
+├────────────────────────────────────────────────────────────┼────────────────┼──────────┼────────┼───────────────────┼──────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ com.mysql:mysql-connector-j (app.jar)                      │ CVE-2023-22102 │ CRITICAL │ fixed  │ 8.0.33            │ 8.2.0                                        │ mysql-connector-java: Connector/J unspecified vulnerability │
+│                                                            │                │          │        │                   │                                              │ (CPU October 2023)                                          │
+│                                                            │                │          │        │                   │                                              │ https://avd.aquasec.com/nvd/cve-2023-22102                  │
+├────────────────────────────────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼──────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ org.apache.tomcat.embed:tomcat-embed-core (app.jar)        │ CVE-2024-52317 │ MEDIUM   │        │ 10.1.28           │ 9.0.96, 10.1.31, 11.0.0                      │ tomcat: Apache Tomcat: Request/response mix-up with HTTP/2  │
+│                                                            │                │          │        │                   │                                              │ https://avd.aquasec.com/nvd/cve-2024-52317                  │
+├────────────────────────────────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼──────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ org.springframework.security:spring-security-web (app.jar) │ CVE-2024-38821 │ CRITICAL │        │ 6.3.3             │ 5.7.13, 5.8.15, 6.2.7, 6.0.13, 6.1.11, 6.3.4 │ Spring-WebFlux: Authorization Bypass of Static Resources in │
+│                                                            │                │          │        │                   │                                              │ WebFlux Applications                                        │
+│                                                            │                │          │        │                   │                                              │ https://avd.aquasec.com/nvd/cve-2024-38821                  │
+├────────────────────────────────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼──────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ org.springframework:spring-context (app.jar)               │ CVE-2024-38820 │ MEDIUM   │        │ 6.1.12            │ 6.1.14                                       │ The fix for CVE-2022-22968 made disallowedFieldspatterns in │
+│                                                            │                │          │        │                   │                                              │ DataBinder ...                                              │
+│                                                            │                │          │        │                   │                                              │ https://avd.aquasec.com/nvd/cve-2024-38820                  │
+├────────────────────────────────────────────────────────────┼────────────────┼──────────┤        │                   ├──────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤
+│ org.springframework:spring-webmvc (app.jar)                │ CVE-2024-38816 │ HIGH     │        │                   │ 6.1.13                                       │ spring-webmvc: Path Traversal Vulnerability in Spring       │
+│                                                            │                │          │        │                   │                                              │ Applications Using RouterFunctions and FileSystemResource   │
+│                                                            │                │          │        │                   │                                              │ https://avd.aquasec.com/nvd/cve-2024-38816                  │
+└────────────────────────────────────────────────────────────┴────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────────────────┴─────────────────────────────────────────────────────────────┘
